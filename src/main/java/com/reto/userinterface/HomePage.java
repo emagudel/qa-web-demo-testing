@@ -16,6 +16,10 @@ public class HomePage extends PageObject {
             the("Boton de popup")
                     .located(By.className("airship-html-prompt-shadow"));
 
+    public static final Target BOTON_COOKIES =
+            the("Boton de cookies")
+                    .located(By.id("testId-accept-cookies-btn"));
+
     public static final Target BOTON_CARRITO =
             the("Boton de carrito")
                     .located(By.id("testId-UserAction-basket"));

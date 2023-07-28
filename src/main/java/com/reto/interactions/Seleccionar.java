@@ -3,7 +3,6 @@ package com.reto.interactions;
 import net.serenitybdd.core.pages.WebElementFacade;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Interaction;
-import net.serenitybdd.screenplay.Performable;
 
 import java.util.List;
 
@@ -13,6 +12,10 @@ import static net.serenitybdd.screenplay.Tasks.instrumented;
 public class Seleccionar implements Interaction {
 
     private String producto;
+
+    public Seleccionar(String producto) {
+        this.producto = producto;
+    }
 
     @Override
     public <T extends Actor> void performAs(T actor) {
@@ -27,7 +30,7 @@ public class Seleccionar implements Interaction {
         }
     }
 
-    public static Performable elProducto(String producto){
+    public static Seleccionar elProducto(String producto){
         return instrumented(Seleccionar.class, producto);
     }
 

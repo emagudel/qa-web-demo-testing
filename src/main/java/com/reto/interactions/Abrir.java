@@ -5,8 +5,10 @@ import com.reto.userinterface.HomePage;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Interaction;
 import net.serenitybdd.screenplay.Performable;
+import net.serenitybdd.screenplay.actions.Click;
 import net.serenitybdd.screenplay.actions.Open;
 
+import static com.reto.userinterface.HomePage.BOTON_COOKIES;
 import static net.serenitybdd.screenplay.Tasks.instrumented;
 
 public class Abrir implements Interaction {
@@ -19,7 +21,8 @@ public class Abrir implements Interaction {
               Open.browserOn(homePage)
         );
         actor.attemptsTo(
-                EliminarPopup.enElHome()
+                EliminarPopup.enElHome(),
+                Click.on(BOTON_COOKIES)
         );
     }
 

@@ -4,6 +4,7 @@ import com.reto.interactions.Seleccionar;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.actions.Click;
+import net.serenitybdd.screenplay.actions.Scroll;
 import net.serenitybdd.screenplay.actions.type.Type;
 
 import static com.reto.userinterface.ProductoPage.*;
@@ -25,10 +26,23 @@ public class Adicionar implements Task {
         CANTIDAD.resolveFor(actor).clear();
         actor.attemptsTo(
                 Type.theValue("2").into(CANTIDAD),
-                Click.on(BOTON_AGREGAR_AL_CARRITO),
-                Click.on(BOTON_AGREGAR_GARANTIA_1_AÑO),
-                Click.on(SEGUIR_COMPRANDO)
+                Scroll.to(BOTON_AGREGAR_AL_CARRITO),
+                Click.on(BOTON_AGREGAR_AL_CARRITO)
         );
+        if(BOTON_AGREGAR_GARANTIA_2_AÑO.isVisibleFor(actor)){
+            actor.attemptsTo(
+                    Scroll.to(BOTON_AGREGAR_GARANTIA_2_AÑO),
+                    Click.on(BOTON_AGREGAR_GARANTIA_2_AÑO),
+                    Scroll.to(SEGUIR_COMPRANDO),
+                    Click.on(SEGUIR_COMPRANDO)
+            );
+        }else{
+            actor.attemptsTo(
+                    Scroll.to(SEGUIR_COMPRANDO),
+                    Click.on(SEGUIR_COMPRANDO)
+            );
+        }
+
     }
 
     public static Adicionar unProductoAlCarrito(String producto){
