@@ -49,8 +49,3 @@ Una vez ejecutado, puedes verificar las evidencias en la ruta:
 
 `.../target/site/serenity/index.html`
 
-
-**Happy Coding!**
-
-***Juan de Jesús Fernández Graciano***
-

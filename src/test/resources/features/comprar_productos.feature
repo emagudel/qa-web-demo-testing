@@ -7,7 +7,9 @@ Característica: Compra de productos
   Esquema del escenario: Comprar un producto de manera exitosa
     Dado que <nombre> ingresa a la pagina para comprar
     Y selecciona la categoria "Tecnología" y subcategoria "Portátiles"
-    Cuando el usuario agrega al carrito los productos
+    Cuando el usuario agrega al carrito el producto "Portátil"
+    Y selecciona otra categoria "Electrohogar" y otra subcategoria "Nevecones"
+    Cuando el usuario agrega al carrito el producto "Nevecones"
     Entonces el usuario deberia de ver el detalle del carrito exitosamente
     Ejemplos:
       | nombre  |

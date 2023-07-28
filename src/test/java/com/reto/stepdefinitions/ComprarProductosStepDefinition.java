@@ -25,11 +25,16 @@ public class ComprarProductosStepDefinition {
         withCurrentActor(Seleccionar.unaCategoria_y_Subcategoria(categoria, subCategoria));
     }
 
-    @Cuando("el usuario agrega al carrito los productos")
-    public void elUsuarioAgregaAlCarritoLosProductos() {
-        withCurrentActor(Adicionar.unProductoAlCarrito());
-        withCurrentActor(SeleccionarAlAzar.unaCategoria_y_Subcategoria());
-        withCurrentActor(AdicionarAlAzar.unProductoAlAzarAlCarrito());
+    @Y("selecciona otra categoria {string} y otra subcategoria {string}")
+    public void seleccionaOtracategoriaOtraSubcategoria(String categoria, String subCategoria ) {
+        withCurrentActor(Seleccionar.unaCategoria_y_Subcategoria(categoria, subCategoria));
+    }
+
+    @Cuando("el usuario agrega al carrito el producto {string}")
+    public void elUsuarioAgregaAlCarritoElProducto(String producto) {
+        withCurrentActor(Adicionar.unProductoAlCarrito(producto));
+        //withCurrentActor(SeleccionarAlAzar.unaCategoria_y_Subcategoria());
+        //withCurrentActor(AdicionarAlAzar.unProductoAlAzarAlCarrito());
     }
 
     @Entonces("el usuario deberia de ver el detalle del carrito exitosamente")

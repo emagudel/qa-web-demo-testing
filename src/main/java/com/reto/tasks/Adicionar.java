@@ -1,24 +1,26 @@
 package com.reto.tasks;
 
+import com.reto.interactions.Seleccionar;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.actions.Click;
 import net.serenitybdd.screenplay.actions.type.Type;
-import net.serenitybdd.screenplay.matchers.WebElementStateMatchers;
-import net.serenitybdd.screenplay.waits.WaitUntil;
 
 import static com.reto.userinterface.ProductoPage.*;
 import static net.serenitybdd.screenplay.Tasks.instrumented;
-import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isVisible;
 
 public class Adicionar implements Task {
+
+    private String producto;
+
+    public Adicionar(String producto) {
+        this.producto = producto;
+    }
 
     @Override
     public <T extends Actor> void performAs(T actor) {
         actor.attemptsTo(
-                WaitUntil.the(SELECCIONAR_PRODUCTO, isVisible()).forNoMoreThan(10).seconds(),
-                WaitUntil.the(SELECCIONAR_PRODUCTO, WebElementStateMatchers.isClickable()),
-                Click.on(SELECCIONAR_PRODUCTO)
+            Seleccionar.elProducto(producto)
         );
         CANTIDAD.resolveFor(actor).clear();
         actor.attemptsTo(
@@ -29,7 +31,7 @@ public class Adicionar implements Task {
         );
     }
 
-    public static Adicionar unProductoAlCarrito(){
-        return instrumented(Adicionar.class);
+    public static Adicionar unProductoAlCarrito(String producto){
+        return instrumented(Adicionar.class, producto);
     }
 }
