@@ -2,7 +2,7 @@ name: Build
 on:
   push:
     branches:
-      - master
+      #- master
       - release
   pull_request:
     branches: [ master ]
@@ -18,7 +18,8 @@ jobs:
         with:
           java-version: 11
           distribution: 'adopt'
-          architecture: x64
+          gradle-version: release-candidate
+      - run: gradle build --dry-run
       - name: Grant Permissions to gradlew
         run: chmod +x gradlew
       - name: Test
