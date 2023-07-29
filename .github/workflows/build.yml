@@ -18,13 +18,7 @@ jobs:
         with:
           java-version: 17
           distribution: 'adopt'
-          cache: gradle
       - name: Grant Permissions to gradlew
         run: chmod +x gradlew
-      - name: Build with Gradle
-        run: ./gradlew build
-      - name: Archive test report
-        uses: actions/upload-artifact@v2
-        with:
-          name: Test report
-          path: build/reports/tests/test
+      - name: Test
+        run: gradle test --tests "*"
