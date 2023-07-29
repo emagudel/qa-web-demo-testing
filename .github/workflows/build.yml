@@ -22,7 +22,7 @@ jobs:
       - name: Grant Permissions to gradlew
         run: chmod +x gradlew
       - name: Build with Gradle
-        run: ./gradlew build --no-daemon
+        run: ./gradlew build
       - name: Archive test report
         uses: actions/upload-artifact@v2
         with:
