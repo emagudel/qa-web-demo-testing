@@ -19,7 +19,8 @@ jobs:
           java-version: 11
           distribution: 'adopt'
       - name: Install Google Chrome
-        run: apt-get install chromium-chromedriver
+        run: |
+          chmod +x ./installChromeSelenium.sh
       - name: Grant Permissions to gradlew
         run: chmod +x gradlew
       - name: Test
