@@ -28,6 +28,10 @@ jobs:
         run: |
           chmod +x ./InstallChrome.sh
            ./InstallChrome.sh
+      - name: Install Selenium # Using shell script to install Google Chrome
+        run: |
+          chmod +x ./InstallSelenium.sh
+           ./InstallSelenium.sh
       - name: Grant execute permission for gradlew
         run: chmod +x gradlew # give permission to Gradle to run the commands
       - name: Build with Gradle
