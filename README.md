@@ -1,9 +1,6 @@
 # Proyecto Base Screenplay Web - SerenityBDD
 
-[![Build Status](https://travis-ci.org/joemccann/dillinger.svg?branch=master)](https://travis-ci.org/joemccann/dillinger)
-
-Este repositorio contiene un escenario de compra de productos, ejemplo ya realizado con Page Object Model + Page Factory (el ejemplo puedes encontrarlo en el siguiente repositorio y rama ([Page Object Model - Rama Page Factory](https://github.com/ingjuanfg/page_object_model_automation_project/tree/page_factory "Page Object Model - Rama Page Factory")).
-
+Este reto consistirá en automatizar la página de Falabella, en donde debemos escoger 2 productos al azar cada uno de ellos con una cantidad aleatoria.
 
 ## Contenido
 
