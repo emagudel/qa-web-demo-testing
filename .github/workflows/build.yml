@@ -23,22 +23,5 @@ jobs:
           java-version: '11'
           distribution: 'temurin'
       - uses: browser-actions/setup-chrome@latest
-      - run: chrome --version
-      - name: Install Google Chrome # Using shell script to install Google Chrome
-        run: |
-          chmod +x ./InstallChrome.sh
-           ./InstallChrome.sh
-      - name: Install Selenium # Using shell script to install Google Chrome
-        run: |
-          chmod +x ./InstallSelenium.sh
-           ./InstallSelenium.sh
-      - name: Grant execute permission for gradlew
-        run: chmod +x gradlew # give permission to Gradle to run the commands
       - name: Build with Gradle
         run: gradle clean test
-      - name: Archive Rest Results
-        uses: actions/upload-artifact@v3
-        if: success() || failure()
-        with:
-          name: test-results
-          path: GradleReports/emailable-report.html
