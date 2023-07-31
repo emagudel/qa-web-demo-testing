@@ -9,12 +9,17 @@ import static net.serenitybdd.screenplay.targets.Target.the;
 
 public class ProductoPage extends PageObject {
 
-    public static final Target SELECCIONAR_PRODUCTO_AL_AZAR = the("Seleccionar producto").located(By.xpath("//*[@id='testId-searchResults-products']//*[@tabindex='0']//span[contains(.,'Televisor')]"));
-    public static final Target SELECCIONAR_PRODUCTO = the("Seleccionar producto").located(By.xpath("//*[@id='testId-searchResults-products']//*[@tabindex='0']//span[contains(.,'Portátil')]"));
-    public static final Target BOTON_AGREGAR_AL_CARRITO = the("Boton de carrito").located(By.id("buttonForCustomers"));
-    public static final Target BOTON_AGREGAR_GARANTIA_1_AÑO = the("Boton de carrito").located(By.id("testId-InCart-inPDP-WarrantyOption-btn-1"));
+    public static final Target SELECCIONAR_PRODUCTO_AL_AZAR = the("Seleccionar producto").located(By.xpath("//*[@id='testId-searchResults-products']/child::div[1]//*[contains(text(),'Televisor')]"));
+    public static final Target SELECCIONAR_PRODUCTO = the("Seleccionar producto").located(By.xpath("//*[@id=\"testId-searchResults-products\"]/div"));
+    public static final Target BOTON_AGREGAR_AL_CARRITO = the("Boton de carrito").located(By.xpath("//*[@id='add-to-cart-button']"));
+    public static final Target BOTON_AGREGAR_GARANTIA_2_AÑO = the("Boton garantia 2 años").located(By.xpath("//*[@class='doc-click-overlay']//span[contains(.,'2 años de Garantía Extendida')]"));
     public static final Target CANTIDAD = the("Cantidad de articulos").located(By.id("quantity-selector-increment-input"));
     public static final Target SEGUIR_COMPRANDO = the("Seguir comprando").located(By.xpath("//button[text()='Seguir comprando']"));
+    public static final Target PRECIO_DEL_PRODUCTO = the("Valor del producto").located(By.xpath("//*[@data-internet-price]"));
+    public static final Target PRECIO_DE_LA_GARANTIA = the("Valor de la garantia").located(By.xpath("//*[@id=\"__next\"]/div/div/div/div/div/div/div[2]/div/div/div[3]/div/div/table/tbody/tr[1]/td[4]"));
+
+
+
 
 }
 
